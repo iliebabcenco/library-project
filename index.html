@@ -9,15 +9,23 @@
     <link rel="stylesheet" href="styles.css">
     <title>Library</title>
 </head>
-<body>
+<body onload="javascript:displayBooks()">
     
     <form action="" class="myForm">
-        <input id="author" type="text" name="author" placeholder="Author name">
-        <input type="text" name="title" placeholder="Title">
-        <input type="number" name="numberOfPages" placeholder="Number of pages">
+        <h3>Add a book there:</h3>
+        <div class="mb-3">
+            <input id="author" type="text" class="form-control" name="author" placeholder="Author name">
+        </div>
+        <div class="mb-3">
+            <input type="text" name="title" class="form-control" placeholder="Title">
+        </div>
+        <div class="mb-3">
+            <input type="number" name="numberOfPages" class="form-control" placeholder="Number of pages">
+        </div>
         <input type = "button" title="submit" value="Create" onclick="addBookToLibrary()">
     </form>
     
     <button button-type="submit" title="submit" value="Create" onclick="displayForm()">New Book</button>
+    <div id="books-container"></div>
 </body>
 </html>

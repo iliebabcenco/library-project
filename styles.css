@@ -1,7 +1,18 @@
 .myForm {
    display: none;
+   width: 25rem;
+   margin: 3rem auto;
+   border: 1px solid gray;
+   border-radius: 4px;
+   padding: 2rem;
 }
 
-button {
-   
+#books-container {
+   display: flex;
+   flex-wrap: wrap;
+   margin: 0 auto;
+   width: 75%;
+}
+.card {
+   margin: 1rem;
 }
