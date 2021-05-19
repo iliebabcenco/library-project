@@ -10,9 +10,14 @@
     <title>Library</title>
 </head>
 <body>
-    <input id="author" type="text" name="author" placeholder="Author name">
-    <input type="text" name="title" placeholder="Title">
-    <input type="number" name="numberOfPages" placeholder="Number of pages">
-    <button button-type="submit" title="submit" value="Create" onclick="addBookToLibrary()">Create</button>
+    
+    <form action="" class="myForm">
+        <input id="author" type="text" name="author" placeholder="Author name">
+        <input type="text" name="title" placeholder="Title">
+        <input type="number" name="numberOfPages" placeholder="Number of pages">
+        <input type = "button" title="submit" value="Create" onclick="addBookToLibrary()">
+    </form>
+    
+    <button button-type="submit" title="submit" value="Create" onclick="displayForm()">New Book</button>
 </body>
 </html>

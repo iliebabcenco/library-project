@@ -23,3 +23,8 @@ function displayBooks() {
         document.body.appendChild(div);
     }
 }
+
+function displayForm() {
+    let form = document.getElementsByClassName("myForm")[0];
+    form.style.display = 'block';
+}
