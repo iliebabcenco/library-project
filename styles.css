@@ -2,7 +2,7 @@
    display: none;
    width: 25rem;
    margin: 3rem auto;
-   border: 1px solid gray;
+   border: 1px solid rgb(173, 172, 172);
    border-radius: 4px;
    padding: 2rem;
 }
@@ -13,6 +13,15 @@
    margin: 0 auto;
    width: 75%;
 }
+
 .card {
    margin: 1rem;
+}
+
+.newbookbtn {
+   width: 10rem;
+   height: 3rem;
+   display: block;
+   margin: 4rem auto;
+   border: 1px solid rgb(173, 172, 172);
 }
