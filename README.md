@@ -6,6 +6,10 @@
 
 - JavaScript, HTML5 and Bootstrap
 
+## How it looks
+
+![](screenshot.png)
+
 ## Getting Started
 
 To get a local copy up and running follow these simple example steps.

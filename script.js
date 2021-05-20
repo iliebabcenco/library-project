@@ -7,10 +7,20 @@ function Book(author, title, numberOfPages, read) {
   this.read = read;
 }
 
+function libraryInitialization() {
+  if (library.length === 0) {
+    library.push(new Book('E. Freeman', 'Head First JavaScript', 1212, false));
+    library.push(new Book('A. Y. Bhargava', 'Grokking Algorithms', 254, true));
+    library.push(new Book('M. Twain', 'Tom Sawyer', 333, false));
+    library.push(new Book('D. Griffiths', 'Head First Rails', 1444, true));
+  }
+}
+
 const form = document.getElementsByClassName('myForm')[0];
 form.style.display = 'none';
 
 function displayBooks() {
+  libraryInitialization();
   document.getElementById('books-container').innerHTML = '';
   library.forEach((book) => {
     let type = 'btn-success';
@@ -85,11 +95,19 @@ addBtn.onclick = function addBookToLibrary() {
   const title = document.getElementsByName('title')[0].value;
   const numberOfPages = document.getElementsByName('numberOfPages')[0].value;
   const read = document.getElementById('flexCheckDefault');
-  library.push(new Book(author, title, numberOfPages, read.checked));
-  const form = document.getElementsByClassName('myForm')[0];
-  form.reset();
-  localStorage.setItem('library', JSON.stringify(library));
-  displayBooks();
+  const errors = document.getElementById('errors');
+  if (author.length === 0 || title.length === 0 || numberOfPages.length === 0) {
+    errors.style.display = 'block';
+    errors.innerText = 'Please complete all fields';
+    errors.style.color = 'red';
+  } else {
+    errors.style.display = 'none';
+    library.push(new Book(author, title, numberOfPages, read.checked));
+    const form = document.getElementsByClassName('myForm')[0];
+    form.reset();
+    localStorage.setItem('library', JSON.stringify(library));
+    displayBooks();
+  }
 };
 
 const displayFormBtn = document.getElementById('display-form-btn');
