@@ -7,6 +7,9 @@ function Book(author, title, numberOfPages, read) {
   this.read = read;
 }
 
+const form = document.getElementsByClassName('myForm')[0];
+form.style.display = 'none';
+
 function displayBooks() {
   document.getElementById('books-container').innerHTML = '';
   library.forEach((book) => {
@@ -81,7 +84,8 @@ addBtn.onclick = function addBookToLibrary() {
   const author = document.getElementById('author').value;
   const title = document.getElementsByName('title')[0].value;
   const numberOfPages = document.getElementsByName('numberOfPages')[0].value;
-  library.push(new Book(author, title, numberOfPages, false));
+  const read = document.getElementById('flexCheckDefault');
+  library.push(new Book(author, title, numberOfPages, read.checked));
   const form = document.getElementsByClassName('myForm')[0];
   form.reset();
   localStorage.setItem('library', JSON.stringify(library));
