@@ -1,8 +1,8 @@
 let library = [];
 
-const bookFactory = (author, title, numberOfPages, read) => {
-  return { author, title, numberOfPages, read };
-};
+const bookFactory = (author, title, numberOfPages, read) => ({
+  author, title, numberOfPages, read,
+});
 
 // simple function of creating books
 // function Book(author, title, numberOfPages, read) {
