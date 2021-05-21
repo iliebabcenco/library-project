@@ -1,18 +1,28 @@
 let library = [];
 
-function Book(author, title, numberOfPages, read) {
-  this.author = author;
-  this.title = title;
-  this.numberOfPages = numberOfPages;
-  this.read = read;
-}
+const bookFactory = (author, title, numberOfPages, read) => ({
+  author, title, numberOfPages, read,
+});
+
+// simple function of creating books
+// function Book(author, title, numberOfPages, read) {
+//   this.author = author;
+//   this.title = title;
+//   this.numberOfPages = numberOfPages;
+//   this.read = read;
+// }
 
 function libraryInitialization() {
   if (library.length === 0) {
-    library.push(new Book('E. Freeman', 'Head First JavaScript', 1212, false));
-    library.push(new Book('A. Y. Bhargava', 'Grokking Algorithms', 254, true));
-    library.push(new Book('M. Twain', 'Tom Sawyer', 333, false));
-    library.push(new Book('D. Griffiths', 'Head First Rails', 1444, true));
+    // using simple fucntion of creating books
+    // library.push(new Book('E. Freeman', 'Head First JavaScript', 1212, false));
+    // library.push(new Book('A. Y. Bhargava', 'Grokking Algorithms', 254, true));
+    // library.push(new Book('M. Twain', 'Tom Sawyer', 333, false));
+    // library.push(new Book('D. Griffiths', 'Head First Rails', 1444, true));
+    library.push(bookFactory('E. Freeman', 'Head First JavaScript', 1212, false));
+    library.push(bookFactory('A. Y. Bhargava', 'Grokking Algorithms', 254, true));
+    library.push(bookFactory('M. Twain', 'Tom Sawyer', 333, false));
+    library.push(bookFactory('D. Griffiths', 'Head First Rails', 1444, true));
   }
 }
 
@@ -102,7 +112,7 @@ addBtn.onclick = function addBookToLibrary() {
     errors.style.color = 'red';
   } else {
     errors.style.display = 'none';
-    library.push(new Book(author, title, numberOfPages, read.checked));
+    library.push(bookFactory(author, title, numberOfPages, read.checked));
     const form = document.getElementsByClassName('myForm')[0];
     form.reset();
     localStorage.setItem('library', JSON.stringify(library));
